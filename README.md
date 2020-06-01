@@ -54,3 +54,29 @@ Hello Mars
 Hello Jupiter
 ```
 
+```
+task myTask {
+    ext.myProperty = "myValue"
+}
+
+task printTaskProperties {
+    doLast {
+        println myTask.myProperty
+    }
+}
+```
+
+création de méthodes 
+```
+task loadfile {
+    doLast {
+        fileList('./mydirectory').each { File file ->
+            println "I found  $file.name"
+        }
+    }
+}
+
+File[] fileList(String dir) {
+    file(dir).listFiles({file -> file.isFile() } as FileFilter).sort()
+}
+```
