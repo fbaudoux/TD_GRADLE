@@ -105,3 +105,17 @@ task encode {
 }
 
 ```
+
+Une tache peut hériter d'une autre tache. Une tache peut avoir des propriétés et des méthodes
+
+```
+task(copy, type: Copy) {
+    from(file('srcDir'))
+    into(buildDir)
+}
+```
+
+
+
+
+
